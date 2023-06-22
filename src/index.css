@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.centered-container {
+  @apply mx-auto   max-w-screen-xl mt-8 mb-16;
+}
+
+.section {
+  @apply mt-8 mb-16;
+}
+
+/* Header Css start from here */
+
+.mx-auto.max-w-7xl.px-4.sm\:px-6.lg\:px-8 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.text-base {
+  line-height: 1.5rem;
+  /* font-family: freight-big-pro; */
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: .06em;
+  text-transform: none;
+  color: #52524e;
+}
+
+.text-base:hover {
+  color: rgba(82,82,78,.4);
+  transition: color 170ms ease-in-out, 
+  background-color 170ms ease-in-out;
+}
+
+img.hidden.lg\:block {
+  max-width: 145px;
+}
+    /* mobile view */
+img.block.lg\:hidden {
+  width: 90px;
+  margin-left: 10rem;
+}
+
+tr.bg-emerald-500.font-bold {
+  background: #52524e;
+  color: #ffffff;
+}
+
+.h-96 {
+  height: 30rem;
+}
+
+.hidden.ml-\[14rem\].md\:flex.md\:space-x-6 {
+  padding: 12px 18px;
+  margin: 0.6625rem 0.8rem;
+  margin-left: 7rem;
+}
+
+button{
+  padding: 12px 18px;
+  box-shadow: none;
+  border: 2px solid #666000;
+  color: #666000;
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14.75px;
+}
+
+button:hover {
+  background-color: #666000;
+  color: #fff;
+  transition: 170ms ease-out;
+}
+
+.button-view-more.h-10.w-30.bg-green-400.mt-4.text-center {
+  padding: 6px 2px;
+  background-color: #666000;
+  color: #fff;
+}
+
+.button-view-more.h-10.w-30.bg-green-400.mt-2 {
+  border: 2px solid #666000;
+  color: #666000;
+  padding: 6px 2px;
+  background: #FFF !important;
+}
+
+footer.bg-white {
+  background-color: #bebfb5;
+}
+
+footer#footer {
+  background-color: #bebfb5;
+  padding: 90px 0;
+  display: block;
+  line-height: 1;
+  /* color: #666000; */
+}
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+  height: 34vh;
+}
+
+.clear:before {
+  content: "";
+  display: table;
+}
+
+footer#footer .container>div {
+  float: left;
+  padding: 0 40px;
+}
+
+footer#footer .abt {
+  width: 33%;
+}
+
+footer#footer h3 {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+footer#footer .desc {
+  color: #52524e;
+  font-size: 16px;
+  line-height: 24px;
+}
+#desc-p{
+    font-family: freight-big-pro;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 19px;
+    letter-spacing: .02em;
+    line-height: 1.4em;
+    text-transform: none;
+    color: #9a9b94;
+}
+footer#footer .mnu {
+  width: 29%;
+}
+
+footer#footer .cmp {
+  width: 19%;
+}
+
+footer#footer .desc a {
+  display: block;
+  margin: 0 0 14px;
+  text-decoration: none;
+  color: #52524e;
+  font-size: 16px;
+  line-height: 24px;
+}
+footer#footer .os {
+  width: 19%;
+}
+
+.clear:after {
+  clear: both;
+}
+
+.clear:after, .clear:before {
+  content: "";
+  display: table;
+}

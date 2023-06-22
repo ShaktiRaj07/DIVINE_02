@@ -1,0 +1,23 @@
+{
+    "$id": "ce_globalData",
+    "filter": {
+        "entityIds": ["site-entity"]
+    },
+    "source": "KnowladgeGraph",
+    "fields": [
+        "name",
+        "c_headData",
+        "c_footData"
+       
+    ],
+    "localization":{
+        "locales": ["en"],
+        "primary": false
+    }
+}
+
+
+
+
+
+
