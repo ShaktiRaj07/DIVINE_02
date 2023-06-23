@@ -59,8 +59,8 @@ const Header = (header: props) => {
                  
                 </div>
                 <div className="hidden ml-[14rem] md:flex md:space-x-6">
-                <button><a href="#" id="button1" className="inline-flex items-center " data-test="template-nav">Contact Us</a></button>
-                <button><a href="#" id="button2"  className="inline-flex items-center " data-test="template-nav">About Us</a></button>
+                <button><a href="#" id="button1" className="inline-flex items-center " data-test="template-nav">{header?._site?.c_headData?.aboutbttn?.label}</a></button>
+                <button><a href="#" id="button2"  className="inline-flex items-center " data-test="template-nav">{header?._site?.c_headData?.contbttn?.label}</a></button>
                 </div>
               </div>  
             </div>

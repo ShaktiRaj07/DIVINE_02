@@ -229,7 +229,7 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           <div>
           </div>
-          
+
           <div className="nearBy-sec-inner grid gap-x-4 gap-y-4 ">
             {yextDisplayCoordinate ||
               cityCoordinate ||
@@ -240,6 +240,7 @@ const Location: Template<ExternalApiRenderData> = ({
               ""
             )}
           </div>
+          <div className="sqs-block-content"><hr/></div>
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

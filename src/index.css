@@ -105,7 +105,7 @@ footer#footer {
   padding: 0 20px;
   position: relative;
   width: 100%;
-  height: 34vh;
+  height: 38vh;
 }
 
 .clear:before {
@@ -124,9 +124,10 @@ footer#footer .abt {
 
 footer#footer h3 {
   color: #FFFFFF;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 30px;
+  font-family: cursive;
 }
 
 footer#footer .desc {
@@ -142,7 +143,7 @@ footer#footer .desc {
     letter-spacing: .02em;
     line-height: 1.4em;
     text-transform: none;
-    color: #9a9b94;
+    color: #52524e;
 }
 footer#footer .mnu {
   width: 29%;
@@ -164,11 +165,53 @@ footer#footer .os {
   width: 19%;
 }
 
-.clear:after {
-  clear: both;
+button#butn-01 {
+  margin-bottom: 2rem;
+  height: 3.5rem;
 }
 
-.clear:after, .clear:before {
-  content: "";
-  display: table;
+button#butn-02 {
+    width: 7rem;
+    height: 3.5rem;
+}
+a.btn-01:hover {
+  color: #fff !important;
+}
+.li-01 {
+  float: left !important;
+}
+
+.img-01 {
+  border-radius: 10px;
+  width: 2.3rem;
+  margin: 0px 12px 0px 0px;
+}
+
+.img-01:hover {
+background-color: #ffffff;
+}
+
+.sqs-block-content {
+  color: #bbb;
+  border: none;
+  background-color: #bbb;
+  height: 0.1rem;
+  margin-top: 4rem;
+}
+
+
+.flex.h-\[calc\(100vh-242px\)\].border {
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+}
+
+.relative.mb-2 {
+  padding: 0.5rem;
+}
+
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 3px;
+  border-right-width: 1px;
 }

@@ -11,7 +11,7 @@ import PageLayout from "../components/PageLayout";
 import StoreLocator from "../components/StoreLocator";
 import {
   provideHeadless,
-//   SandboxEndpoints,
+  SandboxEndpoints,
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 // import { FilterSearch } from "@yext/search-ui-react";
@@ -33,13 +33,14 @@ const searcher = provideHeadless({
   // make sure your experience key matches what you see in the platform
   experienceKey: "divier",
   locale: "en",
-//   endpoints: SandboxEndpoints,
+  endpoints: SandboxEndpoints,
   verticalKey: "locations",
 });
 
-const Locator: Template<TemplateRenderProps> = () => {
+const Locator: Template<TemplateRenderProps> = ({document}) => {
+  const {_site}=document;
   return (
-    <PageLayout>
+    <PageLayout _site={_site}>
       <SearchHeadlessProvider searcher={searcher}>
         <div className="mx-auto max-w-7xl px-4">
           <StoreLocator />
