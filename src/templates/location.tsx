@@ -34,6 +34,9 @@ import { nearByLocation } from "../types/nearByLocation";
 import NearBy from "../components/locationDetails/NearBy";
 import "../index.css";
 import Faqs from "../components/locationDetails/Faqs";
+import Sqssection from "../components/Sqssection";
+import Sqssection2 from "../components/Sqssection2";
+import Sqssection3 from "../components/Sqssection3";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -241,6 +244,9 @@ const Location: Template<ExternalApiRenderData> = ({
             )}
           </div>
           <div className="sqs-block-content"><hr/></div>
+          <Sqssection />
+          <Sqssection2 />
+          <Sqssection3 />
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

@@ -160,6 +160,15 @@ footer#footer .desc a {
   color: #52524e;
   font-size: 16px;
   line-height: 24px;
+  transition: all .3s ease 0s;
+}
+
+footer#footer .desc a:hover {
+  margin-left: 4px;
+  font-weight: 500;
+  color: #666000;
+  transition: all .3s ease 0s;
+ 
 }
 footer#footer .os {
   width: 19%;
@@ -197,11 +206,12 @@ background-color: #ffffff;
   background-color: #bbb;
   height: 0.1rem;
   margin-top: 4rem;
+  margin-bottom: -3rem;
 }
 
 
 .flex.h-\[calc\(100vh-242px\)\].border {
-  margin-top: 8rem;
+  margin-top: 3rem;
   margin-bottom: 4rem;
 }
 
@@ -215,3 +225,99 @@ background-color: #ffffff;
   border-left-width: 3px;
   border-right-width: 1px;
 }
+
+h2.text-center.font-bold.text-3xl.pt-8 {
+  font-family: futura-pt !important;
+  font-weight: 400 !important;
+  color: #666000 !important;
+  font-size: 2.35rem !important;
+}
+
+.text-green-600 {
+  font-family: futura-pt !important;
+  font-weight: 500 !important;
+  font-style: normal;
+  text-transform: none;
+  line-height: 1.25em;
+  color: #52524e !important;
+  margin-bottom: 0.85rem;
+}
+/* New section css start */
+
+.container1 {
+  display: grid;
+  align-items: center; 
+  grid-template-columns: 1fr 1fr;
+  column-gap: 57px;
+  padding: 0px 0px 0px 0px;
+ }
+ 
+ img {
+   max-width: 100%;
+   max-height:100%;
+ }
+ 
+ .text {
+   font-size: 10px;
+ }
+ @media screen and (min-width: 580px) {
+   .container1 {
+     display: flex;
+   }
+ }
+ 
+ .container1 {
+     display: grid;
+     align-items: center;
+     grid-template-columns: 1fr 1fr;
+     column-gap: -7px;
+ }
+ 
+ .textM {
+     /* margin-left: 13%; */
+     width: 540px;
+     margin-top: 6rem;
+ }
+ 
+ .desc-p {
+   font-family: freight-big-pro;
+   font-weight: 500;
+   font-style: normal;
+   font-size: 18px;
+   letter-spacing: .02em;
+   line-height: 1.4em;
+   text-transform: none;
+   color: #9a9b94;
+ }
+ .texth1 {
+   font-family: futura-pt;
+   font-weight: 400;
+   font-style: normal;
+   font-size: 30px;
+   letter-spacing: .08em;
+   text-transform: none;
+   line-height: 1.25em;
+   color: #52524e;
+ }
+ .sqs-button-element--primary {
+   display: inline-block;
+   padding: 2em 5em;
+   border: 2px solid #666000;
+   background-color: #fff;
+   font-family: futura-pt;
+   font-size: 16px;
+   font-weight: 400;
+   font-style: normal;
+   letter-spacing: .3em;
+   line-height: 1.1em;
+   text-transform: uppercase;
+   color: #666000;
+   border-radius: 0.1em;
+   text-decoration: none;
+   width: 33rem;
+   text-align: center;
+ }
+ 
+ .sqs-button-element--primary:hover {
+   opacity: .8;
+ }

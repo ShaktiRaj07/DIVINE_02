@@ -14,10 +14,11 @@ import {
   SandboxEndpoints,
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
+import Banner from "../components/Banner";
 // import { FilterSearch } from "@yext/search-ui-react";
 
 export const getPath: GetPath<TemplateProps> = () => {
-  return `locator`;
+  return `index.html`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
@@ -41,6 +42,7 @@ const Locator: Template<TemplateRenderProps> = ({document}) => {
   const {_site}=document;
   return (
     <PageLayout _site={_site}>
+      <Banner />
       <SearchHeadlessProvider searcher={searcher}>
         <div className="mx-auto max-w-7xl px-4">
           <StoreLocator />
