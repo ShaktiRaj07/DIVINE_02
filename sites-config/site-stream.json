@@ -3,7 +3,7 @@
     "filter": {
         "entityIds": ["site-entity"]
     },
-    "source": "KnowledgeGraph",
+    "source": "knowledgeGraph",
     "fields": [
         "name",
         "c_headData",
