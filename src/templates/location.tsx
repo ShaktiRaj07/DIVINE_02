@@ -73,6 +73,7 @@ export const config: TemplateConfig = {
       "dm_directoryParents.slug",
       "dm_directoryParents.meta",
       "dm_directoryParents.c_addressRegionDisplayName",
+      "c_imageBanner",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -212,8 +213,10 @@ const Location: Template<ExternalApiRenderData> = ({
     yextDisplayCoordinate,
     siteDomain,
     dm_directoryParents,
+    c_imageBanner,
+
   } = document;
-  console.log('_site', _site)
+  console.log('c_image', c_imageBanner)
   return (
     <>
       <PageLayout _site={_site}>
@@ -243,8 +246,32 @@ const Location: Template<ExternalApiRenderData> = ({
               ""
             )}
           </div>
-          <div className="sqs-block-content"><hr/></div>
-          <Sqssection />
+          <div className="sqs-block-content"><hr /></div>
+          <div className="main-container1">
+
+            <div className="text-outer">
+              <h1 className="text-inner">the difference is design+build</h1>
+
+            </div>
+            <div className="text-second-outer">
+              <p className="desc-para">
+                You love where you live: the location, the schools, your friends and neighbors…but maybe your home hasn’t reached its potential, needs to be modernized or expanded. We’re here to make your dream remodel a reality.
+              </p>
+              <br />
+              <p className="desc-para"> Divine is Boston’s premier design+build firm, offering turn-key remodeling solutions. We provide one-stop design and remodeling services for a stress-free renovation.
+                You’ll work with an award-winning designer who will oversee your entire project from start-to-finish, including all the contractors. And the best part? It will all be done on-time, while you remain in full control of the budget, so that you and your family can get back to enjoying your life, and the gorgeous new rooms within it.</p>
+              <br />
+              <div className="image-button-wrapper">
+                <div className="image-button sqs-dynamic-text" data-width-percentage="35.8" style={{ fontSize: "max(0.75rem, 35.8%)" }}>
+                  <div className="image-button-inner">
+                    <a href="/kitchen-design-boston-wellesley" className="sqs-button-element--secondary">a divine story</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="sqs-block-content"><hr /></div>
+          <Sqssection c_imageBanner={c_imageBanner} />
           <Sqssection2 />
           <Sqssection3 />
         </div>

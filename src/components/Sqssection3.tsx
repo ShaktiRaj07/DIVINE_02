@@ -14,7 +14,7 @@ const Sqssection3 = () => {
                     </p>
                     <br />
                     <p className="desc-p"> Whether you are planning to renovate your entire home, an addition, or if you require structural work, our award-winning design team will re-imagine your home with you, to ensure that your style always shines through.</p>
-                    <br />
+                    <br/>
                     <div className="image-button-wrapper">
                         <div className="image-button sqs-dynamic-text" data-width-percentage="35.8" style={{ fontSize: "max(0.75rem, 35.8%)" }}>
                             <div className="image-button-inner">
@@ -23,7 +23,7 @@ const Sqssection3 = () => {
                         </div>
                     </div>
                 </div>
-                <div className="image">
+                <div className="image" style={{marginTop:"5rem"}}>
                     <img src="https://images.squarespace-cdn.com/content/v1/5b59d2392971143f390e9391/1534799855831-647LO460VQTW3YRLHCTY/BOSTON~4.JPG?format=750w" width="611px" height="408px" id="hp" />
                 </div>
             </div>

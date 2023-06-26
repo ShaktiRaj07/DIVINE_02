@@ -5,8 +5,6 @@ import { styles } from "../../components/constant/GlobalConstant";
 import { googleMapsApiKey } from "../../components/constant/GlobalConstant";
 
 
-
-
 export type cordinateProps = {
   latitude: number;
   longitude: number;

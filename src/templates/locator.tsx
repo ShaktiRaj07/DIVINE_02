@@ -8,13 +8,14 @@ import {
   TemplateRenderProps,
 } from "@yext/pages";
 import PageLayout from "../components/PageLayout";
-import StoreLocator from "../components/StoreLocator";
+// import StoreLocator from "../components/StoreLocator";
 import {
   provideHeadless,
   SandboxEndpoints,
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import Banner from "../components/Banner";
+import NewLocator from "../components/NewLocator";
 // import { FilterSearch } from "@yext/search-ui-react";
 
 export const getPath: GetPath<TemplateProps> = () => {
@@ -42,10 +43,12 @@ const Locator: Template<TemplateRenderProps> = ({document}) => {
   const {_site}=document;
   return (
     <PageLayout _site={_site}>
-      <Banner />
+      {/* <Banner /> */}
+      <h1 className="store-heading">Store Locator</h1>
       <SearchHeadlessProvider searcher={searcher}>
         <div className="mx-auto max-w-7xl px-4">
-          <StoreLocator />
+          {/* <StoreLocator /> */}
+          <NewLocator />
         </div>
       </SearchHeadlessProvider>
   </PageLayout>
