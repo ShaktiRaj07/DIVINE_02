@@ -391,3 +391,7 @@ h2.text-center.font-bold.text-3xl.pt-8 {
     color: #52524e;
     text-align: center;
 }
+.mapboxgl-marker.mapboxgl-marker-anchor-center Button {
+  border: none !important;
+  background: none !important;
+}
