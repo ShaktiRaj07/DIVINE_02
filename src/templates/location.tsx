@@ -251,16 +251,6 @@ const Location: Template<ExternalApiRenderData> = ({
           <div>
           </div>
 
-          <div className="nearBy-sec-inner grid gap-x-4 gap-y-4 ">
-            {yextDisplayCoordinate ||
-              cityCoordinate ||
-              displayCoordinate ||
-              geocodedCoordinate ? (
-              <NearBy externalApiData={externalApiData} />
-            ) : (
-              ""
-            )}
-          </div>
           <div className="sqs-block-content"><hr /></div>
           <div className="main-container1">
             <div className="text-outer">
@@ -289,6 +279,18 @@ const Location: Template<ExternalApiRenderData> = ({
           <Sqssection3 c_sqsSectionThird={c_sqsSectionThird}/>
           <br />
           <FAQ faqs={c_faqs}/>
+
+          <div className="nearBy-sec-inner grid gap-x-4 gap-y-4 ">
+            {yextDisplayCoordinate ||
+              cityCoordinate ||
+              displayCoordinate ||
+              geocodedCoordinate ? (
+              <NearBy externalApiData={externalApiData} />
+            ) : (
+              ""
+            )}
+          </div>
+         
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
