@@ -33,10 +33,11 @@ import CustomMap from "../components/locationDetails/CustomMap";
 import { nearByLocation } from "../types/nearByLocation";
 import NearBy from "../components/locationDetails/NearBy";
 import "../index.css";
-import Faqs from "../components/locationDetails/Faqs";
 import Sqssection from "../components/Sqssection";
 import Sqssection2 from "../components/Sqssection2";
 import Sqssection3 from "../components/Sqssection3";
+import FAQ from "../components/Faqs";
+// import Faq from "../components/Faqs";
 
 /**
  * Required when Knowledge Graph data is used for a template.
@@ -67,6 +68,8 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "services",
       "photoGallery",
+      "c_faqs.question",
+      "c_faqs.answer",
       // "c_featuredFAQs.question",
       // "c_featuredFAQs.answer",
       "dm_directoryParents.name",
@@ -74,6 +77,8 @@ export const config: TemplateConfig = {
       "dm_directoryParents.meta",
       "dm_directoryParents.c_addressRegionDisplayName",
       "c_imageBanner",
+      "c_sqssectioSec",
+      "c_sqsSectionThird",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -188,7 +193,14 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
-  return { ...data, externalApiData };
+  const { dm_directoryParents, name } = data.document;
+
+   (dm_directoryParents || []).push({ name: name, slug: "" });
+  return { ...data, externalApiData,
+    document: {
+            ...data.document,
+            dm_directoryParents: dm_directoryParents,
+          }, };
 };
 type ExternalApiRenderData = TemplateRenderProps & {
   externalApiData: nearByLocation;
@@ -207,6 +219,7 @@ const Location: Template<ExternalApiRenderData> = ({
     mainPhone,
     services,
     // c_featuredFAQs,
+    c_faqs,
     geocodedCoordinate,
     displayCoordinate,
     cityCoordinate,
@@ -214,6 +227,8 @@ const Location: Template<ExternalApiRenderData> = ({
     siteDomain,
     dm_directoryParents,
     c_imageBanner,
+    c_sqsSectionThird,
+    c_sqssectioSec,
 
   } = document;
   console.log('c_image', c_imageBanner)
@@ -248,10 +263,8 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           <div className="sqs-block-content"><hr /></div>
           <div className="main-container1">
-
             <div className="text-outer">
               <h1 className="text-inner">the difference is design+build</h1>
-
             </div>
             <div className="text-second-outer">
               <p className="desc-para">
@@ -272,8 +285,10 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           <div className="sqs-block-content"><hr /></div>
           <Sqssection c_imageBanner={c_imageBanner} />
-          <Sqssection2 />
-          <Sqssection3 />
+          <Sqssection2 c_sqssectioSec={c_sqssectioSec}/>
+          <Sqssection3 c_sqsSectionThird={c_sqsSectionThird}/>
+          <br />
+          <FAQ faqs={c_faqs}/>
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

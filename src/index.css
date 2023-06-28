@@ -88,6 +88,8 @@ button:hover {
   background: #FFF !important;
 }
 
+ /* Footer Section css  */
+
 footer.bg-white {
   background-color: #bebfb5;
 }
@@ -97,7 +99,7 @@ footer#footer {
   padding: 90px 0;
   display: block;
   line-height: 1;
-  /* color: #666000; */
+  margin-top: 10rem;
 }
 .container {
   margin: 0 auto;
@@ -210,9 +212,9 @@ background-color: #ffffff;
 }
 
 
-.flex.h-\[calc\(100vh-242px\)\].border {
-  margin-top: 3rem;
-  margin-bottom: 4rem;
+.mx-auto.max-w-7xl.px-4 {
+  /* margin-top: 3rem; */
+  /* margin-bottom: 4rem; */
 }
 
 .relative.mb-2 {
@@ -227,10 +229,16 @@ background-color: #ffffff;
 }
 
 h2.text-center.font-bold.text-3xl.pt-8 {
-  font-family: futura-pt !important;
-  font-weight: 400 !important;
-  color: #666000 !important;
-  font-size: 2.35rem !important;
+    padding: 2em 13em !important;
+    font-family: futura-pt !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    letter-spacing: .3em;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    color: #666000 !important;
+    text-align: center !important;
 }
 
 .text-green-600 {
@@ -242,7 +250,8 @@ h2.text-center.font-bold.text-3xl.pt-8 {
   color: #52524e !important;
   margin-bottom: 0.85rem;
 }
-/* New section css start */
+
+ /* New SQS section css start */
 
 .container1 {
   display: grid;
@@ -391,7 +400,152 @@ h2.text-center.font-bold.text-3xl.pt-8 {
     color: #52524e;
     text-align: center;
 }
+
+ /* Locator , listing and map box css  */
+
 .mapboxgl-marker.mapboxgl-marker-anchor-center Button {
   border: none !important;
   background: none !important;
+}
+
+.locator-map-block {
+  @apply w-full  h-[80vh] md:h-screen top-0 order-1 lg:order-none z-[99];
+}
+div#result-pallasindur {
+  border: 1px solid grey;
+  padding: 0.55rem;
+}
+
+/* .overflow-y-auto {
+  margin-left: 1rem;
+  margin-top: 0.25rem;
+} */
+
+div#result-kanpurk {
+  border: 1px solid grey;
+  padding: 0.55rem;
+}
+
+div#result-inotecpb {
+  border: 1px solid grey;
+  padding: 0.55rem;
+}
+
+div#result-shilongmegha {
+  border: 1px solid grey;
+  padding: 0.55rem;
+}
+
+
+button#useLocation:hover {
+  background-color: none !IMPORTANT;
+  background: none;
+  text-decoration: underline;
+  color: #333;
+}
+button#useLocation {
+  float: right;
+  border: none;
+  margin-top: -2.1rem;
+  margin-right: -1rem;
+}
+
+h2.font-semibold.text-slate-900.uppercase {
+  color: orange;
+  padding-left: 10px;
+}
+
+  /* Faq css */
+
+.add {
+  border: none;
+  outline: none;
+  padding: 18px 28px;
+  border-radius: 0px;
+  color: #333;
+  margin-bottom: 4px;
+  /* border-bottom: 2px dashed #c81500; */
+  border: 2px solid #666000;
+  box-shadow: none;
+}
+
+.accordian {
+  width: 100%;
+}
+
+h2.title {
+  padding: 4em 12em;
+  font-family: futura-pt;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .3em;
+  line-height: 1.1em;
+  text-transform: uppercase;
+  color: #666000;
+  text-align: center;
+}
+.block.w-full.py-4.text-gray-700.antialiased.font-sans.text-sm.font-light.leading-normal.accordian.answer-field {
+  font-family: freight-big-pro;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 18px;
+  letter-spacing: .02em;
+  line-height: 1.4em;
+  text-transform: none;
+  color: #9a9b94;
+  margin-left: 0.8rem;
+}
+
+  /*  Dm pages css */
+
+a.font-bold.text-2xl.text-blue-700.hover\:underline {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    margin: auto;
+    padding: 20px;
+    border-radius: 1rem;
+    padding-left: 18px;
+    color: #666000;
+    border: 2px solid #666000;
+    text-decoration: none;
+}
+
+a.font-bold.text-2xl.text-blue-700.hover\:underline:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: #666000;
+  color: #ffffff;
+}
+
+h1.text-3xl.font-semibold.text-center {
+  font-family: freight-big-pro;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 35px;
+  letter-spacing: .02em;
+  line-height: 1.4em;
+  text-transform: none;
+  margin-bottom: 8rem;
+  color: #9a9b94;
+}
+
+.section.space-y-14.px-10 {
+  margin-bottom: 0rem !important;
+}
+
+.border.rounded-lg.drop-shadow-md.bg-gray-100.space-y-6.p-3.h-60 {
+  padding: 27px 23px;
+  width: 25rem;
+  height: 18rem;
+}
+
+/* Nearby section css */
+
+.text-xl.font-semibold {
+  font-family: futura-pt;
+  font-weight: 700;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 0.2rem;
+ 
 }

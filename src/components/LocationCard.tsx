@@ -4,7 +4,12 @@ import { CardComponent, CardProps } from "@yext/search-ui-react";
 import * as React from "react";
 import Location, { Coordinate } from "../types/locations";
 import { RiDirectionFill } from "react-icons/ri";
-
+import { StaticData } from "../../sites-global/staticData";
+import "../index.css";
+const metersToMiles = (meters: number) => {
+  const miles = meters * 0.000621371;
+  return miles.toFixed(2);
+};
 const LocationCard: CardComponent<Location> = ({
   result,
 }: CardProps<Location>): JSX.Element => {
@@ -16,7 +21,11 @@ const LocationCard: CardComponent<Location> = ({
   };
 
   return (
-    <div className="flex justify-between border-y p-4">
+    <div
+      className={`location result-list-inner-${result.id} result`}
+      id={`result-${result.id}`}
+      key={`result-${result.rawData.id}`}
+    > 
       <div className="flex">
         <div>
           <a
@@ -27,8 +36,18 @@ const LocationCard: CardComponent<Location> = ({
           >
             {location.name}
           </a>
-          <p className="text-sm">{location.address.line1}</p>
-          <p className="text-sm">{`${location.address.city}, ${location.address.region} ${location.address.postalCode}`}</p>
+          <p className="text-sm">{location.address.line1}</p>  
+          <p className="text-sm">{`${location.address.city}, 
+          ${location.address.region} 
+          ${location.address.postalCode}`}</p>
+          {typeof result.distance != "undefined" ? (
+                <div className="distance">
+                  {metersToMiles(result.distance)}{" "}
+                  <span>{StaticData.miles}</span>
+                </div>
+              ) : (
+                ""
+              )}
         </div>
       </div>
       <div className="flex items-center">

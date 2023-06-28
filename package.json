@@ -21,19 +21,26 @@
     "node": ">=17"
   },
   "dependencies": {
+    "@css-modules-theme/core": "^2.3.0",
+    "@googlemaps/markerclusterer": "^2.3.1",
     "@googlemaps/react-wrapper": "^1.1.35",
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.14",
+    "@material-tailwind/react": "^2.0.4",
     "@react-google-maps/api": "^2.18.1",
     "@types/mapbox-gl": "^2.7.11",
     "@yext/rtf-converter": "^1.7.1",
     "@yext/search-headless-react": "^2.2.0",
     "@yext/search-ui-react": "^1.2.1",
     "classnames": "^2.3.2",
+    "jquery": "^3.7.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-element-to-jsx-string": "^15.0.0",
     "react-icons": "^4.10.1",
     "react-phone-number-input": "^3.2.23",
+    "react-schemaorg": "^2.0.0",
+    "react-slideshow-image": "^4.2.1",
     "tailwind-merge": "^1.6.2"
   },
   "devDependencies": {

@@ -20,6 +20,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import LocationCard from "./LocationCard";
 import MapPin from "./MapPin";   
 import "../index.css";
+import { GoogleMaps } from "./GoogleMaps";
+import { center_latitude, center_longitude, googleApikey } from "../../sites-global/global";
 
 type InitialSearchState = "not started" | "started" | "complete";
 
@@ -141,9 +143,18 @@ const StoreLocator = (): JSX.Element => {
           />
         </div>
         <div className="w-2/3">
-          <MapboxMap
+          {/* <MapboxMap
             mapboxAccessToken={'pk.eyJ1Ijoic2h1YmhhbXNoYXJtYWRzIiwiYSI6ImNsZnFzdDF3YjAxbzczd2xkemF5aTU4bnEifQ.akdWeB5U30Rnk10mIwEdYQ'|| ""}
           PinComponent={MapPin} 
+          /> */}
+
+            <GoogleMaps
+            apiKey={googleApikey}
+            centerLatitude={center_latitude}
+            centerLongitude={center_longitude}
+            check={true}
+            defaultZoom={5}
+            showEmptyMap={true}
           />
         </div>
       </div>

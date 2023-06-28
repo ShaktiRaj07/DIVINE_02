@@ -16,7 +16,6 @@ const year = currentTime.getFullYear();
 
 const Footer = (props: props) => {
   const { _site } = props;
-  console.log('_site', _site)
   return (
     <>
       <footer id="footer">
