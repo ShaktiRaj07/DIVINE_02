@@ -8,7 +8,7 @@ export const OpenStausFunctions = {
   formatOpenNowString: (hoursData: any, timeZone: any) => {
     const now = new Date();
     const currentTime = new Date(
-      now.toLocaleString("en-US", { timeZone: timeZone })
+      now.toLocaleString("en", { timeZone: timeZone })
     );
 
     const tomorrow = new Date(currentTime.getTime() + 60 * 60 * 24 * 1000);
@@ -357,7 +357,7 @@ export const OpenStausFunctions = {
   },
   getUtcOffsetFromTimeZone: (timeZone: any, date = new Date()) => {
     const tz = date
-      .toLocaleString("en-gb", { timeZone, timeStyle: "long" })
+      .toLocaleString("en", { timeZone, timeStyle: "long" })
       .split(" ")
       .slice(-1)[0];
     const dateString = date.toString();

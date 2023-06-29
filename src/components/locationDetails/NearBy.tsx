@@ -27,7 +27,7 @@ export default function NearBy(props: any) {
           {nearbyLocation?.map((location: any, index: number) => {
             console.log('location', location.data.slug)
               let url = "";
-              var name: any = location.data.name?.toLowerCase();
+              var name: any = location.data.id?.toLowerCase();
               var country: any = location.data.address.countryCode?.toLowerCase();
               var initialcountry: any = country.toString();
               var finalcountry: any = initialcountry.replaceAll(" ", "-");
@@ -40,14 +40,15 @@ export default function NearBy(props: any) {
               var string: any = name.toString();
               let result1: any = string.replaceAll(" ", "-");
               // let result2 : any = location.data.slug.tostring();
-              let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + location.data.slug + ".html";
+              let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + name + ".html";
+              console.log(newurl,"newurl")
               if (!location.data.slug) {
                 // url = `/${location.data.id}-${result1}.html`;
-                url = `/${newurl}`;
+                url = `${newurl}`;
                 // console.log(url, "j,fgsjdhfhsfhsfhgfsdjfghdj");
               } else {
                 // url = `/${location.data.slug.toString()}.html`;
-                url = `/${newurl}`;
+                url = `${newurl}`;
               
               }
             if (index > 0) {

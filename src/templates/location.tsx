@@ -102,24 +102,28 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   //   ? document.slug
   //   : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
   //   }-${document.id.toString()}`;
-    let url = "";
-  const name: string = document.name.toLowerCase();
-  const string: string = name.toString();
-  const result: string = string.replaceAll(" ", "-");
-  document.dm_directoryParents?.map((result: string, i: number) => {
+  var url = "";
+  var name: any = document.id.toLowerCase();
+  var string: any = name.toString();
+  let result: any = string.replaceAll(" ", "-");
+  document?.dm_directoryParents?.map((result: any, i: number) => {
+    
+    
     if (i > 0) {
       url += result.slug + "/"
     }
   })
   if (!document.slug) {
     url += `${result}.html`;
+   
   } else {
     url += `${document.slug.toString()}.html`;
   }
 
-  // return `${document.id}.html`;
+  // return document.id+".html";
 
   return url;
+
 };
 
 
@@ -209,7 +213,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   data: any
 ) => {
   const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/answers/vertical/query?experienceKey=divier&api_key=ded1aa9eae96ab1f99c0d7e4611cec31&v=20220511&version=STAGING&locale=en&verticalKey=locations&retrieveFacets=true&facetFilters=%7B%7D&skipSpellCheck=false&session_id=2ac0eae3-77dc-4f29-b42e-7956c52f44b0&locationRadius=4023360&sessionTrackingEnabled=true&sortBys=[]&source=STANDARD`;
-  console.log('url', url)
+  // console.log('url', url)
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
