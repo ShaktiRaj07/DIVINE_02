@@ -42,29 +42,6 @@ const Details = ({ address, phone, services }: DetailsProps) => {
           )}
           {services && <List list={services} />}
 
-              <OpenClose />
-                    {/* <div className="icon-row">
-            <div className="icon">
-              <img src="/assets/images/watch-icn-4e5dce53.svg" width="20" height="20" alt="Clock" loading="lazy" />
-            </div>
-            <div className="openCloseStatus">
-              <div className="closing-div">
-                <div className="openDot green-dot">
-                  <div className="location-icon notHighlight">
-                    <div className="location-icon notHighlight">
-                    </div>
-                    <div className="hours-info">
-                      <div className="cursor-default flex items-center notHighlight w-fit">
-                        <span className="notHighlight currentStatus close2">Closed</span>
-                      </div>
-                      <span className="notHighlight">Opens at </span>
-                      <span className="notHighlight">11 AM</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

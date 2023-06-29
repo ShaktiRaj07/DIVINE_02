@@ -21,7 +21,6 @@ const LocationCard: CardComponent<Location> = ({
   };
   var url="";
   const { address, hours, additionalHoursText, timezone, mainPhone } = result.rawData;
-  console.log('result.rawData', result.rawData)
   var name: any = result.rawData.name?.toLowerCase();
   var country: any = result.rawData.address.countryCode?.toLowerCase();
   var initialcountry: any = country.toString();
@@ -34,16 +33,19 @@ const LocationCard: CardComponent<Location> = ({
   var finalcity: any = initialrcity.replaceAll(" ", "-");
   var string: any = name.toString();
   let result1: any = string.replaceAll(" ", "-");
-  let result2 : any = result.rawData.slug.toString();
+  let result2 : any = result?.rawData?.slug?.toString();
   let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result2 + ".html";
+
+
+  // let result2 : any = result.rawData.slug.toString();
+  // let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result2 + ".html";
   if (!result.rawData.slug) {
     //  url= `/${result.rawData.id}-${result1}.html`;
-    url = newurl;
+    url = `${newurl}`;
     console.log('url', url)
   } else {
-    // url = `/${result.rawData.slug.toString()}.html`;
-    url = newurl ;
-  }
+    url = `${newurl}`;
+     }
 
   return (
     <div
@@ -55,7 +57,7 @@ const LocationCard: CardComponent<Location> = ({
         <div>
           <a
             target={"_blank"}
-            href={url}
+            href={`/${url}`}
             className="font-semibold text-orange"
             rel="noreferrer"
           >
