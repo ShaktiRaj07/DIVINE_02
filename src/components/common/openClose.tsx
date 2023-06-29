@@ -297,7 +297,7 @@ export const OpenStausFunctions = {
     const minutes = parseInt(parts[1].replace(/\u200E/g, ""), 10);
     return hours + minutes / 60;
   },
-  getIntervalOnDate: (date, hoursData) => {
+  getIntervalOnDate: (date : any, hoursData : any) => {
     const day = date.getDate();
     const month = date.getMonth() + 1;
     const year = date.getFullYear();
@@ -345,7 +345,7 @@ export const OpenStausFunctions = {
       return null;
     }
   },
-  formatTime: (time) => {
+  formatTime: (time : any) => {
     const tempDate = new Date("January 1, 2020 " + time);
     const localeString = "en-US";
 
@@ -355,7 +355,7 @@ export const OpenStausFunctions = {
       hour12: true,
     });
   },
-  getUtcOffsetFromTimeZone: (timeZone, date = new Date()) => {
+  getUtcOffsetFromTimeZone: (timeZone: any, date = new Date()) => {
     const tz = date
       .toLocaleString("en-gb", { timeZone, timeStyle: "long" })
       .split(" ")

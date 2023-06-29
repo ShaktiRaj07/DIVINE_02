@@ -98,11 +98,31 @@ export const config: TemplateConfig = {
  * and ensure that each entity has the slug field pouplated.
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  return document.slug
-    ? document.slug
-    : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
-    }-${document.id.toString()}`;
+  // return document.slug
+  //   ? document.slug
+  //   : `${document.locale}/${document.address.region}/${document.address.city}/${document.address.line1
+  //   }-${document.id.toString()}`;
+    let url = "";
+  const name: string = document.name.toLowerCase();
+  const string: string = name.toString();
+  const result: string = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: string, i: number) => {
+    if (i > 0) {
+      url += result.slug + "/"
+    }
+  })
+  if (!document.slug) {
+    url += `${result}.html`;
+  } else {
+    url += `${document.slug.toString()}.html`;
+  }
+
+  // return `${document.id}.html`;
+
+  return url;
 };
+
+
 
 /**
  * Defines a list of paths which will redirect to the path created by getPath.

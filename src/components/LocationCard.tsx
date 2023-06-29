@@ -19,6 +19,31 @@ const LocationCard: CardComponent<Location> = ({
   const getGoogleMapsLink = (coordinate: Coordinate): string => {
     return `https://www.google.com/maps/dir/?api=1&destination=${coordinate.latitude},${coordinate.longitude}`;
   };
+  var url="";
+  const { address, hours, additionalHoursText, timezone, mainPhone } = result.rawData;
+  console.log('result.rawData', result.rawData)
+  var name: any = result.rawData.name?.toLowerCase();
+  var country: any = result.rawData.address.countryCode?.toLowerCase();
+  var initialcountry: any = country.toString();
+  var finalcountry: any = initialcountry.replaceAll(" ", "-");
+  var region: any = result.rawData.address.region?.toLowerCase();
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-");
+  var city: any = result.rawData.address.city?.toLowerCase();
+  var initialrcity: any = city.toString();
+  var finalcity: any = initialrcity.replaceAll(" ", "-");
+  var string: any = name.toString();
+  let result1: any = string.replaceAll(" ", "-");
+  let result2 : any = result.rawData.slug.toString();
+  let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result2 + ".html";
+  if (!result.rawData.slug) {
+    //  url= `/${result.rawData.id}-${result1}.html`;
+    url = newurl;
+    console.log('url', url)
+  } else {
+    // url = `/${result.rawData.slug.toString()}.html`;
+    url = newurl ;
+  }
 
   return (
     <div
@@ -30,7 +55,7 @@ const LocationCard: CardComponent<Location> = ({
         <div>
           <a
             target={"_blank"}
-            href={location.slug}
+            href={url}
             className="font-semibold text-orange"
             rel="noreferrer"
           >

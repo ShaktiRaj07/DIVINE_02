@@ -15,6 +15,7 @@ import { center_latitude, center_longitude, googleApikey } from "../../sites-glo
 const NewLocator = (): JSX.Element => {
   const searchActions = useSearchActions();
   const [inputValue, setInputValue] = React.useState("");
+  
   // This state is used to manage the loading state and display a loader
 
   const [loading, setLoading] = useState(true);

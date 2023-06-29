@@ -27,6 +27,7 @@ type InitialSearchState = "not started" | "started" | "complete";
 
 const StoreLocator = (): JSX.Element => {
   const searchActions = useSearchActions();
+  
 
   const [initialSearchState, setInitialSearchState] =
   useState<InitialSearchState>("not started");

@@ -25,6 +25,31 @@ export default function NearBy(props: any) {
         </h2>
         <div className="grid gap-x-4 gap-y-4  grid-cols-3">
           {nearbyLocation?.map((location: any, index: number) => {
+            console.log('location', location.data.slug)
+              let url = "";
+              var name: any = location.data.name?.toLowerCase();
+              var country: any = location.data.address.countryCode?.toLowerCase();
+              var initialcountry: any = country.toString();
+              var finalcountry: any = initialcountry.replaceAll(" ", "-");
+              var region: any = location.data.address.region?.toLowerCase();
+              var initialregion: any = region.toString();
+              var finalregion: any = initialregion.replaceAll(" ", "-");
+              var city: any = location.data.address.city?.toLowerCase();
+              var initialrcity: any = city.toString();
+              var finalcity: any = initialrcity.replaceAll(" ", "-");
+              var string: any = name.toString();
+              let result1: any = string.replaceAll(" ", "-");
+              // let result2 : any = location.data.slug.tostring();
+              let newurl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + location.data.slug + ".html";
+              if (!location.data.slug) {
+                // url = `/${location.data.id}-${result1}.html`;
+                url = `/${newurl}`;
+                // console.log(url, "j,fgsjdhfhsfhsfhgfsdjfghdj");
+              } else {
+                // url = `/${location.data.slug.toString()}.html`;
+                url = `/${newurl}`;
+              
+              }
             if (index > 0) {
               return (
                 <>
@@ -77,7 +102,7 @@ export default function NearBy(props: any) {
                     <div className="button-view-more h-10 w-30 bg-green-400 mt-4 text-center">
                       <Link
                         className="btn font-bold"
-                        href={`/${location.data.slug}`}
+                        href={`/${url}`}
                         data-ya-track={`viewstore-${location.data.name}`}
                         eventName={`viewstore-${location.data.name}`}
                         rel="noopener noreferrer"

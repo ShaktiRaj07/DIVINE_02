@@ -122,21 +122,21 @@ function UnwrappedGoogleMaps({
 
   locationResults.length > 0
     ? locationResults.map((result: any, i: number) => {
-        if (i == 0 && result) {
-          center = {
-            lat: result.rawData.yextDisplayCoordinate
-              ? result.rawData.yextDisplayCoordinate.latitude
-              : result.rawData.displayCoordinate.latitude,
-            lng: result.rawData.yextDisplayCoordinate
-              ? result.rawData.yextDisplayCoordinate.longitude
-              : result.rawData.displayCoordinate.longitude,
-          };
-        }
-      })
+      if (i == 0 && result) {
+        center = {
+          lat: result.rawData.yextDisplayCoordinate
+            ? result.rawData.yextDisplayCoordinate.latitude
+            : result.rawData.displayCoordinate.latitude,
+          lng: result.rawData.yextDisplayCoordinate
+            ? result.rawData.yextDisplayCoordinate.longitude
+            : result.rawData.displayCoordinate.longitude,
+        };
+      }
+    })
     : (center = {
-        lat: centerLatitude,
-        lng: centerLongitude,
-      });
+      lat: centerLatitude,
+      lng: centerLongitude,
+    });
 
   let info = false;
   const cssClasses = useComposedCssClasses(builtInCssClasses, customCssClasses);
@@ -215,7 +215,7 @@ function UnwrappedGoogleMaps({
     if (mapMarkerClusterer) {
       mapMarkerClusterer.clearMarkers();
     }
-  } catch (e) {}
+  } catch (e) { }
   let i = 0;
   for (const result of locationResults) {
     i++;
@@ -313,7 +313,7 @@ function UnwrappedGoogleMaps({
       if (!info) {
         markers1.current[i].setIcon(Hovermap);
       }
-      locationResults.map((result : any, index : number) => {
+      locationResults.map((result: any, index: number) => {
         if (i == index) {
           const resultelement = document.querySelectorAll(
             `.result-list-inner-${index + 1}`
@@ -355,7 +355,7 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-      locationResults.map((result : any, index : number) => {
+      locationResults.map((result: any, index: number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
@@ -433,8 +433,8 @@ function UnwrappedGoogleMaps({
               markerPins.current[index - 1].setIcon(marker_icon);
             }
             $(".result").removeClass("fixed-hover");
-          
-            refLocationResults?.current?.map((result: any , i: number) => {
+
+            refLocationResults?.current?.map((result: any, i: number) => {
               if (i == index) {
                 setHover(false);
                 isHover = false;
@@ -443,7 +443,7 @@ function UnwrappedGoogleMaps({
                 }
                 document
                   .querySelectorAll(".result")
-                  [index].classList.add("fixed-hover");
+                [index].classList.add("fixed-hover");
                 addActiveGrid(index);
                 const position = {
                   lat: result.rawData.yextDisplayCoordinate
@@ -475,9 +475,9 @@ function UnwrappedGoogleMaps({
     let url = "";
 
     const name: any = result.rawData.name?.toLowerCase();
-    const country : any = result.rawData.address.countryCode?.toLowerCase();
-    const initialcountry : any = country.toString();
-    const finalcountry : any = initialcountry.replaceAll(" ", "-");
+    const country: any = result.rawData.address.countryCode?.toLowerCase();
+    const initialcountry: any = country.toString();
+    const finalcountry: any = initialcountry.replaceAll(" ", "-");
     const region: any = result.rawData.address.region?.toLowerCase();
     const initialregion: any = region.toString();
     const finalregion: any = initialregion.replaceAll(" ", "-");
@@ -487,8 +487,8 @@ function UnwrappedGoogleMaps({
     const string1: any = name.toString();
     const result1: any = string1.replaceAll(" ", "-");
 
-    let newURl= finalcountry + "/" + finalregion + "/" + finalcity + "/" + result1 + ".html";
-    
+    let newURl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result1 + ".html";
+
     if (!result.rawData.slug) {
       url = `${newURl}`;
     } else {
@@ -522,16 +522,16 @@ function UnwrappedGoogleMaps({
               ""
             )}
           </div>
-          {result.rawData.mainPhone?
-    <div className="icon-row">
-      <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
-      </div>
-      <div className="content-col">
-        {/* <h6>Telephone</h6> */}
-        <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
-          {result.rawData.mainPhone}</a>
-      </div>
-    </div>:''}
+          {result.rawData.mainPhone ?
+            <div className="icon-row">
+              <div className="icon"> <img className=" " src={Phonesvg} width="20" height="20" alt="" />
+              </div>
+              <div className="content-col">
+                {/* <h6>Telephone</h6> */}
+                <a id="address" className="notHighlight" href={`tel:${result.rawData.mainPhone}`}>
+                  {result.rawData.mainPhone}</a>
+              </div>
+            </div> : ''}
 
           {result.rawData.hours && result.rawData.hours.reopenDate ? (
             ""
@@ -712,5 +712,5 @@ function scrollToRow(index: any) {
     .call(document.querySelectorAll(".scrollbar-container") || [])
     .forEach(function (el: any) {
       el.scrollTop = o;
-    }); 
+    });
 }

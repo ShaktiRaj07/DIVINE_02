@@ -30,6 +30,7 @@ import {
   AnalyticsScopeProvider,
 } from "@yext/pages/components";
 import { AnswerExperienceConfig } from "../config/answersHeadlessConfig";
+import BreadCrumbs from "../components/Breadcrumbs";
 // import { FilterSearch } from "@yext/search-ui-react";
 
 export const getPath: GetPath<TemplateProps> = () => {
