@@ -2,6 +2,7 @@ import * as React from "react";
 import { useEffect } from "react";
 import { StaticData } from "../../../sites-global/staticData";
 import Timer from "../locationDetails/countdown";
+
 // import OpenCloseBlock from "./OpenCloseBlock";
 
 export const OpenStausFunctions = {
@@ -188,6 +189,7 @@ export const OpenStausFunctions = {
 
     if (openRightNow) {
       // console.log("openRightNow");
+      // console.log('openRightNow', openRightNow)
 
       if (
         currentInterval.start === "00:00" &&
@@ -225,7 +227,7 @@ export const OpenStausFunctions = {
           <div className={"closeddot 4"}>
             <div className="red-dot">
               <div className="hours-info ">
-                <span className="font-second-main-font "> Closed - </span>
+                <span className="font-second-main-font "> Closed1 - </span>
                 {"Opens at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
@@ -243,7 +245,7 @@ export const OpenStausFunctions = {
           <div className={"closeddot 3"}>
             <div className="red-dot">
               <div className="hours-info ">
-                <span className="font-second-main-font">Closed - </span>
+                <span className="font-second-main-font">Closed2 - </span>
                 {"Opens at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
@@ -260,7 +262,7 @@ export const OpenStausFunctions = {
       return (
         <div className="closeddot 2">
           <div className="red-dot">
-            <div className="hours-info ">Closed</div>{" "}
+            <div className="hours-info ">Closed3</div>{" "}
           </div>
         </div>
       );
@@ -365,7 +367,7 @@ export const OpenStausFunctions = {
       Date.parse(`${dateString} UTC`) - Date.parse(`${dateString} ${tz}`);
     return OpenStausFunctions.msToTime(offset);
   },
-  msToTime: (duration) => {
+  msToTime: (duration : any) => {
     let milliseconds = Math.floor((duration % 1000) / 100),
       seconds = Math.floor((duration / 1000) % 60),
       minutes = Math.floor((duration / (1000 * 60)) % 60),
@@ -427,7 +429,7 @@ export default function OpenClose(props: any) {
                 fill="#ad1e1f"
               />
             </svg>
-            <div className="hours-info font-second-main-font ">Closed</div>{" "}
+            <div className="hours-info font-second-main-font ">Closed   </div>{" "}
           </div>
         </div>
       )}

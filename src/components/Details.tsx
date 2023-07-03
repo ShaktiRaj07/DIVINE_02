@@ -41,7 +41,7 @@ const Details = ({ address, phone, services }: DetailsProps) => {
             </div>
           )}
           {services && <List list={services} />}
-
+          <OpenClose />
         </div>
       </div>
     </>

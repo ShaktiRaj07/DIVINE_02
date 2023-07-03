@@ -151,7 +151,7 @@ const City: Template<TemplateRenderProps> = ({
     var string: any = name.toString();;
     let result: any = string.replaceAll(" ", "-");
 
-    const main_url = finalcountry + "/"+finalregion+"/"+finalcity+"/"+entity.id+".html"
+    const main_url = finalcountry + "/" + finalregion + "/" + finalcity + "/" + name + ".html";
     console.log(main_url,"mainiouwerywh")
     // let newlink: any =    
     if (!entity.slug) {

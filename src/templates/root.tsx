@@ -42,7 +42,9 @@ export const config: TemplateConfig = {
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   currentUrl = "/" + document.slug.toString() + ".html";
+  // console.log('currenturl', currentUrl)
   return "/" + document.slug.toString() + ".html";
+  
 };
 
 export const getHeadConfig: GetHeadConfig<

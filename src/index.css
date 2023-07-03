@@ -566,3 +566,233 @@ abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
   text-decoration: none;
 }
+
+/* infoWindow css start here */
+
+.active.daylist{ @apply  !block pl-[50px] }
+.OpenCloseStatus .daylist{@apply hidden}
+.active.daylist {
+  text-transform: capitalize;
+}
+
+.location-name-miles {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 19px;
+  color: #52524e;
+}
+.content-col {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+}
+.address.notHighlight {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+
+}
+
+.distance {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+}
+
+span.font-second-main-font {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+}
+
+span.lowercase {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  color: #9A9B94;
+}
+
+a.btn:hover {
+  background-color: #666000;
+  color: #fff;
+}
+
+a.btn {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+  border: 2px solid #666000;
+  padding: 4px;
+}
+
+a.cursor-pointer.getdirection1.btn:hover {
+  background-color: #666000;
+  color: #fff;
+}
+
+a.cursor-pointer.getdirection1.btn {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9A9B94;
+  border: 2px solid #666000;
+  padding: 4px;
+  margin-left: 10.95rem;
+}
+
+.button-bx.\!ml-4.\!mb-0 {
+  margin-top: 8px;
+}
+
+button.ml-2 {
+  border: none;
+  background-color: none;
+  background: none !important;
+}
+span.icon.notHighlight.mr-1 {
+  height: 28px;
+
+}
+
+table.day-hrs .currentDay .time-group {
+
+  background: #52524e;
+  color: #ffffff;
+
+}
+
+table.day-hrs .currentDay .dayName {
+
+  background: #52524e;
+  color: #ffffff;
+}
+div#innerDataa {
+  margin-left: 10px;
+}
+
+p#textLine1 {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  color: #9a9b94;
+}
+
+td.dayName {
+  padding-right: 1rem;
+}
+
+a#nearBy-abutn {
+  color: #fff !important;
+  font-family: futura-pt;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* .swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+} */
+
+
+.swiper-slide img {
+  display: block;
+  width: 101%;
+}
+
+.swiper-slide, swiper-slide {
+  flex-shrink: 0;
+  width: 16% !important;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 80% !important;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function,initial);
+  box-sizing: content-box;
+}
+
+.swiper.swiper-coverflow.swiper-3d.swiper-initialized.swiper-horizontal.swiper-watch-progress.mySwiper {
+  margin-top: -1rem;
+}
+
+/* new slider section */
+
+.text-heading1 {
+  padding: 17px 17px 17px 40px;
+  margin-top: 6rem;
+}
+
+.text-heading1 .text-inner1{
+    font-family: freight-big-pro;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: .02em;
+  line-height: 1.4em;
+  text-transform: none;
+  color: #52524e;
+}
+
+.text-heading1 .text-inner1:hover {
+color: #9a9b94;
+}
+
+a.text-inner1 {
+  padding-bottom: 0.35rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(82,82,78,.3);
+}
+
+a.sqss-button-element--secondary {
+  padding: 13px 26px;
+    font-family: futura-pt;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+    color: #666000;
+    border-color: #666000;
+    border: 2px solid;
+    display: inline-block;
+    text-decoration: none;
+}
+.image-button.sqs-dynamic-text22 {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+a.sqss-button-element--secondary:hover {
+  background-color: #666000;
+  color: #ffffff;
+}

@@ -29,6 +29,7 @@ import OpenClose from "../components/common/openClose";
 import $ from "jquery";
 import { StaticData } from "../../sites-global/staticData";
 import useFetchResults from "../hooks/useFetchResults";
+import "../index.css";
 /**
  * CSS class interface for the {@link GoogleMaps} component
  *
@@ -167,7 +168,7 @@ function UnwrappedGoogleMaps({
     strokeWeight: 1,
     labelOrigin: new google.maps.Point(21, 22),
   };
-  function zoomMapTo(zoomTo, centerToSet = false) {
+  function zoomMapTo(zoomTo :  any, centerToSet = false) {
     currentMapZoom = map?.getZoom();
     const newZoom =
       currentMapZoom > zoomTo ? currentMapZoom - 1 : currentMapZoom + 1;
@@ -279,7 +280,7 @@ function UnwrappedGoogleMaps({
 
         if (markers1.current.length == 1) {
           map.setCenter(center);
-          map.setZoom(10);
+          map.setZoom(8);
         } else if (markers1.current.length > 0) {
           for (let i = 0; i < locationResults.length; i++) {
             centerlast = {
@@ -299,7 +300,7 @@ function UnwrappedGoogleMaps({
       }, 1000);
     } else if (hover) {
       map?.setZoom(zoom);
-      if (zoom > 4) {
+      if (zoom > 8) {
       }
     }
   }, [ref, center, map, providerOptions, zoom]);
@@ -327,7 +328,7 @@ function UnwrappedGoogleMaps({
           Infowindow(i, result);
           scrollToRow(index);
         }
-        map?.setZoom(13);
+        map?.setZoom(8);
 
         infoWindow.current.open(map, markers1.current[i]);
       });
@@ -355,7 +356,7 @@ function UnwrappedGoogleMaps({
       setHover(true);
       info = false;
       infoWindow.current.close();
-      locationResults.map((result: any, index: number) => {
+      locationResults?.map((result: any, index: number) => {
         const resultelement = document.querySelectorAll(
           `.result-list-inner-${index + 1}`
         );
@@ -363,7 +364,7 @@ function UnwrappedGoogleMaps({
           resultelement[index].classList.remove("active", "fixed-hover");
         }
       });
-      map?.setZoom(10);
+      map?.setZoom(8);
     });
   }
 
@@ -474,7 +475,7 @@ function UnwrappedGoogleMaps({
     info = true;
     let url = "";
 
-    const name: any = result.rawData.name?.toLowerCase();
+    const name: any = result.rawData.id?.toLowerCase();
     const country: any = result.rawData.address.countryCode?.toLowerCase();
     const initialcountry: any = country.toString();
     const finalcountry: any = initialcountry.replaceAll(" ", "-");
@@ -487,7 +488,7 @@ function UnwrappedGoogleMaps({
     const string1: any = name.toString();
     const result1: any = string1.replaceAll(" ", "-");
 
-    let newURl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + result1 + ".html";
+    let newURl = finalcountry + "/" + finalregion + "/" + finalcity + "/" + name + ".html";
 
     if (!result.rawData.slug) {
       url = `${newURl}`;

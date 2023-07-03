@@ -121,7 +121,7 @@ const State: Template<TemplateRenderProps> = ({
       entity.dm_directoryChildren?.map((detl: any) => {
      
         var string: any = detl.id.toString();          
-        newurl =  slug +"/"+ entity.slug +"/"+string+".html";
+        newurl =  slug + "/" + entity.slug + "/" + string + ".html";
         console.log('newurl', newurl)           
       })        
       return (

@@ -52,12 +52,14 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   let url = "";
   document.dm_directoryParents.map((i: any) => {
     if (i.meta?.entityType?.id == "ce_country") {
-      url += i.slug + "/";
+      url += i.slug + "/";  
+      console.log('url12', url)
     }
   });
   url += document.slug.toString();
 
   return url + ".html";
+
 };
 
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {

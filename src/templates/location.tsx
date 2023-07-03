@@ -37,6 +37,8 @@ import Sqssection from "../components/Sqssection";
 import Sqssection2 from "../components/Sqssection2";
 import Sqssection3 from "../components/Sqssection3";
 import FAQ from "../components/Faqs";
+import SwiperDemo from "../components/SwiperDemo";
+
 // import Faq from "../components/Faqs";
 
 /**
@@ -107,17 +109,17 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var string: any = name.toString();
   let result: any = string.replaceAll(" ", "-");
   document?.dm_directoryParents?.map((result: any, i: number) => {
-    
-    
+
+
     if (i > 0) {
       url += result.slug + "/"
     }
   })
   if (!document.slug) {
     url += `${result}.html`;
-   
+
   } else {
-    url += `${document.slug.toString()}.html`;
+    url += `${document.id.toString()}.html`;
   }
 
   // return document.id+".html";
@@ -219,12 +221,14 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   )) as nearByLocation;
   const { dm_directoryParents, name } = data.document;
 
-   (dm_directoryParents || []).push({ name: name, slug: "" });
-  return { ...data, externalApiData,
+  (dm_directoryParents || []).push({ name: name, slug: "" });
+  return {
+    ...data, externalApiData,
     document: {
-            ...data.document,
-            dm_directoryParents: dm_directoryParents,
-          }, };
+      ...data.document,
+      dm_directoryParents: dm_directoryParents,
+    },
+  };
 };
 type ExternalApiRenderData = TemplateRenderProps & {
   externalApiData: nearByLocation;
@@ -244,6 +248,7 @@ const Location: Template<ExternalApiRenderData> = ({
     services,
     // c_featuredFAQs,
     c_faqs,
+    props,
     geocodedCoordinate,
     displayCoordinate,
     cityCoordinate,
@@ -255,7 +260,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_sqssectioSec,
 
   } = document;
-  console.log('c_image', c_imageBanner)
+
   return (
     <>
       <PageLayout _site={_site}>
@@ -299,10 +304,10 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           <div className="sqs-block-content"><hr /></div>
           <Sqssection c_imageBanner={c_imageBanner} />
-          <Sqssection2 c_sqssectioSec={c_sqssectioSec}/>
-          <Sqssection3 c_sqsSectionThird={c_sqsSectionThird}/>
+          <Sqssection2 c_sqssectioSec={c_sqssectioSec} />
+          <Sqssection3 c_sqsSectionThird={c_sqsSectionThird} />
           <br />
-          <FAQ faqs={c_faqs}/>
+          <FAQ faqs={c_faqs} />
 
           <div className="nearBy-sec-inner grid gap-x-4 gap-y-4 ">
             {yextDisplayCoordinate ||
@@ -314,7 +319,20 @@ const Location: Template<ExternalApiRenderData> = ({
               ""
             )}
           </div>
-         
+          <div className="text-heading1">
+            <a href="#" className="text-inner1"> @divinedesignbuild</a>
+          </div>
+          <br />
+          {/* <SwiperDemo /> */}
+          <div className="image-button-wrapper">
+            <div className="image-button sqs-dynamic-text22" data-width-percentage="35.8" style={{ fontSize: "max(0.75rem, 35.8%)" }}>
+              <div className="image-button-inner">
+                <a href="/kitchen-design-boston-wellesley" className="sqss-button-element--secondary">
+                  Follow us on Instagram
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </PageLayout>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

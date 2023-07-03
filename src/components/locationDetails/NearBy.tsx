@@ -103,6 +103,7 @@ export default function NearBy(props: any) {
                     <div className="button-view-more h-10 w-30 bg-green-400 mt-4 text-center">
                       <Link
                         className="btn font-bold"
+                        id="nearBy-abutn"
                         href={`/${url}`}
                         data-ya-track={`viewstore-${location.data.name}`}
                         eventName={`viewstore-${location.data.name}`}
